@@ -1,0 +1,220 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #120F1C;
+  --color-foreground: #F4EFE6;
+  --color-primary: #FF7A59;
+  --color-primary-foreground: #1A0F0B;
+  --color-secondary: #2A2240;
+  --color-secondary-foreground: #F4EFE6;
+  --color-accent: #C9E27A;
+  --color-accent-foreground: #16200A;
+  --color-muted: #1E1930;
+  --color-muted-foreground: #A79FB8;
+  --color-card: #1B1629;
+  --color-card-foreground: #F4EFE6;
+  --color-border: #3A3352;
+  --color-input: #2A2240;
+  --color-ring: #FF7A59;
+  --color-success: #6FCF97;
+  --color-success-foreground: #0B2016;
+  --color-warning: #F2C94C;
+  --color-warning-foreground: #231B03;
+  --color-destructive: #F25F5C;
+  --color-destructive-foreground: #2A0707;
+
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
+  --font-display: 'Fraunces', serif;
+}
+
+:root {
+  --background: #120F1C;
+  --foreground: #F4EFE6;
+  --primary: #FF7A59;
+  --primary-foreground: #1A0F0B;
+  --secondary: #2A2240;
+  --secondary-foreground: #F4EFE6;
+  --accent: #C9E27A;
+  --accent-foreground: #16200A;
+  --muted: #1E1930;
+  --muted-foreground: #A79FB8;
+  --card: #1B1629;
+  --card-foreground: #F4EFE6;
+  --border: #3A3352;
+  --input: #2A2240;
+  --ring: #FF7A59;
+  --radius: 1rem;
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
+  --font-fraunces: 'Fraunces', serif;
+  --success: #6FCF97;
+  --success-foreground: #0B2016;
+  --warning: #F2C94C;
+  --warning-foreground: #231B03;
+  --destructive: #F25F5C;
+  --destructive-foreground: #2A0707;
+}
+
+* {
+  box-sizing: border-box;
+  border-color: var(--border);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+.glass {
+  background: color-mix(in srgb, var(--foreground) 7%, transparent);
+  border: 1px solid color-mix(in srgb, var(--foreground) 16%, transparent);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  box-shadow: 0 20px 50px -20px color-mix(in srgb, var(--background) 80%, black);
+}
+
+.glass-strong {
+  background: color-mix(in srgb, var(--foreground) 11%, transparent);
+  border: 1px solid color-mix(in srgb, var(--foreground) 22%, transparent);
+  backdrop-filter: blur(26px) saturate(150%);
+  -webkit-backdrop-filter: blur(26px) saturate(150%);
+}
+
+.font-display {
+  font-family: var(--font-fraunces), serif;
+}
+
+.text-hero-xl {
+  font-size: clamp(3.75rem, 14vw, 10.5rem);
+  line-height: 0.88;
+  letter-spacing: -0.04em;
+}
+
+.text-section-xl {
+  font-size: clamp(2.25rem, 6vw, 4.5rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.text-cta-xl {
+  font-size: clamp(2.5rem, 8vw, 6.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+}
+
+.text-outline {
+  color: transparent;
+  -webkit-text-stroke: 2px var(--foreground);
+}
+
+.bg-mesh {
+  background:
+    radial-gradient(60% 50% at 20% 10%, color-mix(in srgb, var(--primary) 30%, transparent), transparent 70%),
+    radial-gradient(50% 45% at 85% 25%, color-mix(in srgb, var(--accent) 18%, transparent), transparent 70%),
+    radial-gradient(70% 60% at 50% 100%, color-mix(in srgb, var(--secondary) 90%, transparent), transparent 70%);
+}
+
+.blob-primary {
+  background: radial-gradient(circle at 30% 30%, var(--primary), transparent 70%);
+  filter: blur(60px);
+}
+
+.blob-accent {
+  background: radial-gradient(circle at 60% 40%, var(--accent), transparent 70%);
+  filter: blur(70px);
+}
+
+.blob-deep {
+  background: radial-gradient(circle at 50% 50%, var(--secondary), transparent 70%);
+  filter: blur(50px);
+}
+
+.noise-overlay {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+}
+
+.scrim-bottom {
+  background: linear-gradient(to top, color-mix(in srgb, var(--background) 92%, transparent), color-mix(in srgb, var(--background) 45%, transparent) 55%, transparent);
+}
+
+.animate-morph-a {
+  animation: morphA 16s ease-in-out infinite;
+}
+
+.animate-morph-b {
+  animation: morphB 20s ease-in-out infinite;
+}
+
+.animate-morph-c {
+  animation: morphC 24s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spinSlow 14s linear infinite;
+}
+
+.reveal {
+  opacity: 1;
+  transform: none;
+}
+
+.reveal-ready {
+  animation: revealUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.spring-ease {
+  transition-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.expo-ease {
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes morphA {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); border-radius: 42% 58% 63% 37% / 45% 40% 60% 55%; }
+  50% { transform: translate3d(40px, 30px, 0) scale(1.15); border-radius: 60% 40% 35% 65% / 55% 60% 40% 45%; }
+}
+
+@keyframes morphB {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1.1); border-radius: 55% 45% 40% 60% / 60% 35% 65% 40%; }
+  50% { transform: translate3d(-50px, 40px, 0) scale(0.9); border-radius: 38% 62% 58% 42% / 40% 58% 42% 60%; }
+}
+
+@keyframes morphC {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%; }
+  50% { transform: translate3d(30px, -40px, 0) scale(1.2); border-radius: 62% 38% 46% 54% / 50% 62% 38% 50%; }
+}
+
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes revealUp {
+  from { opacity: 0; transform: translate3d(0, 32px, 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+
+@keyframes modalIn {
+  from { opacity: 0; transform: translate3d(0, 24px, 0) scale(0.97); }
+  to { opacity: 1; transform: translate3d(0, 0, 0) scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .animate-morph-a, .animate-morph-b, .animate-morph-c, .animate-spin-slow { animation: none; }
+  .reveal-ready { animation: none; opacity: 1; }
+}
