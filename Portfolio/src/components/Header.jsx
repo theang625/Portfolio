@@ -1,14 +1,25 @@
-'use client';
-
 import React, { useEffect, useState } from 'react';
 import AppLogo from './ui/AppLogo';
-import Icon from './ui/AppIcon';
+import AppIcon from './ui/AppIcon';
+import {
+  BrowserView,
+  MobileView,
+  isBrowser,
+  isMobile,
+} from 'react-device-detect';
 
 const links = [
-  { label: 'Work', href: '#work' },
   { label: 'About', href: '#about' },
-  { label: 'Recognition', href: '#recognition' },
-  { label: 'Words', href: '#words' },
+  { label: 'Skill', href: '#skill' },
+  { label: 'Projects', href: '#projects' },
+  { label: 'Contact', href: '#contact' },
+];
+
+const name = [
+  {
+    firstName: 'Chhun',
+    lastName: 'Theang',
+  },
 ];
 
 export default function Header() {
@@ -27,21 +38,36 @@ export default function Header() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 px-4 pt-4 sm:px-6">
       <nav
-        className={`glass mx-auto flex max-w-6xl items-center justify-between rounded-full px-4 py-2 transition-all duration-500 expo-ease ${scrolled ? 'bg-background/60' : ''
-          }`}
+        className={`glass mx-auto flex max-w-6xl items-center justify-between rounded-full px-4 py-2 transition-all duration-500 expo-ease ${
+          scrolled ? 'bg-background/60' : ''
+        }`}
         aria-label="Primary"
       >
         <a
-          href="#top"
+          href="#Home"
           className="flex items-center gap-2"
           aria-label="GlassFolio home"
         >
-          <AppLogo size={36} />
-          <span className="font-display text-lg tracking-tight">
-            GlassFolio
+          <span className="flex font-display text-3xl tracking-tight gap-2">
+            {name?.map((n, index) => (
+              <span key={index} className="flex gap-2">
+                {/* Desktop View: Shows full first and last name */}
+                <span className="hidden md:flex gap-2">
+                  <span className="font-bold text-primary">{n?.firstName}</span>
+                  <span>{n?.lastName}</span>
+                </span>
+
+                {/* Mobile View: Shows initials or shortened version */}
+                <span className="flex md:hidden gap-1">
+                  <span className="font-bold text-primary">
+                    {n?.firstName?.[0]}
+                  </span>
+                  <span>{n?.lastName?.[0]}</span>
+                </span>
+              </span>
+            ))}
           </span>
         </a>
-
         <ul className="hidden items-center gap-1 md:flex">
           {links?.map((l) => (
             <li key={l?.href}>
@@ -55,12 +81,22 @@ export default function Header() {
           ))}
         </ul>
 
+        <div>
+          <button className="md: hidden lg:flex">
+            <AppIcon
+              name={open ? 'CommandLineIcon' : 'CommandLineIcon'}
+              size={30}
+            />
+          </button>
+        </div>
+
         <div className="flex items-center gap-2">
           <a
             href="#contact"
             className="inline-flex min-h-[44px] items-center rounded-full bg-primary px-5 text-sm font-semibold text-primary-foreground transition-transform duration-300 spring-ease hover:scale-105"
           >
-            Hire me
+            <AppIcon name={'NewspaperIcon'} className="mr-1" size={28} />
+            Resume.pdf
           </a>
           <button
             type="button"
@@ -69,7 +105,7 @@ export default function Header() {
             aria-label={open ? 'Close menu' : 'Open menu'}
             aria-expanded={open}
           >
-            <Icon name={open ? 'XMarkIcon' : 'Bars3Icon'} size={22} />
+            <AppIcon name={open ? 'XMarkIcon' : 'Bars3Icon'} size={22} />
           </button>
         </div>
       </nav>

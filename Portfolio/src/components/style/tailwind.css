@@ -1,57 +1,57 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme {
-  --color-background: #120F1C;
-  --color-foreground: #F4EFE6;
-  --color-primary: #FF7A59;
-  --color-primary-foreground: #1A0F0B;
-  --color-secondary: #2A2240;
-  --color-secondary-foreground: #F4EFE6;
-  --color-accent: #C9E27A;
-  --color-accent-foreground: #16200A;
-  --color-muted: #1E1930;
-  --color-muted-foreground: #A79FB8;
-  --color-card: #1B1629;
-  --color-card-foreground: #F4EFE6;
-  --color-border: #3A3352;
-  --color-input: #2A2240;
-  --color-ring: #FF7A59;
-  --color-success: #6FCF97;
-  --color-success-foreground: #0B2016;
-  --color-warning: #F2C94C;
-  --color-warning-foreground: #231B03;
-  --color-destructive: #F25F5C;
-  --color-destructive-foreground: #2A0707;
+  --color-background: #120f1c;
+  --color-foreground: #f4efe6;
+  --color-primary: #34d399;
+  --color-primary-foreground: #1a0f0b;
+  --color-secondary: #2a2240;
+  --color-secondary-foreground: #f4efe6;
+  --color-accent: #c9e27a;
+  --color-accent-foreground: #16200a;
+  --color-muted: #1e1930;
+  --color-muted-foreground: #a79fb8;
+  --color-card: #1b1629;
+  --color-card-foreground: #f4efe6;
+  --color-border: #3a3352;
+  --color-input: #2a2240;
+  --color-ring: #ff7a59;
+  --color-success: #6fcf97;
+  --color-success-foreground: #0b2016;
+  --color-warning: #f2c94c;
+  --color-warning-foreground: #231b03;
+  --color-destructive: #f25f5c;
+  --color-destructive-foreground: #2a0707;
 
   --font-sans: 'Plus Jakarta Sans', sans-serif;
   --font-display: 'Fraunces', serif;
 }
 
 :root {
-  --background: #120F1C;
-  --foreground: #F4EFE6;
-  --primary: #FF7A59;
-  --primary-foreground: #1A0F0B;
-  --secondary: #2A2240;
-  --secondary-foreground: #F4EFE6;
-  --accent: #C9E27A;
-  --accent-foreground: #16200A;
-  --muted: #1E1930;
-  --muted-foreground: #A79FB8;
-  --card: #1B1629;
-  --card-foreground: #F4EFE6;
-  --border: #3A3352;
-  --input: #2A2240;
-  --ring: #FF7A59;
+  --background: #120f1c;
+  --foreground: #f4efe6;
+  --primary: #34d399;
+  --primary-foreground: #1a0f0b;
+  --secondary: #2a2240;
+  --secondary-foreground: #f4efe6;
+  --accent: #c9e27a;
+  --accent-foreground: #16200a;
+  --muted: #1e1930;
+  --muted-foreground: #a79fb8;
+  --card: #1b1629;
+  --card-foreground: #f4efe6;
+  --border: #3a3352;
+  --input: #2a2240;
+  --ring: #ff7a59;
   --radius: 1rem;
   --font-sans: 'Plus Jakarta Sans', sans-serif;
   --font-fraunces: 'Fraunces', serif;
-  --success: #6FCF97;
-  --success-foreground: #0B2016;
-  --warning: #F2C94C;
-  --warning-foreground: #231B03;
-  --destructive: #F25F5C;
-  --destructive-foreground: #2A0707;
+  --success: #6fcf97;
+  --success-foreground: #0b2016;
+  --warning: #f2c94c;
+  --warning-foreground: #231b03;
+  --destructive: #f25f5c;
+  --destructive-foreground: #2a0707;
 }
 
 * {
@@ -72,7 +72,13 @@ html {
   scroll-behavior: smooth;
 }
 
-h1, h2, h3, h4, h5, h6, p {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
   margin: 0;
 }
 
@@ -120,23 +126,47 @@ h1, h2, h3, h4, h5, h6, p {
 
 .bg-mesh {
   background:
-    radial-gradient(60% 50% at 20% 10%, color-mix(in srgb, var(--primary) 30%, transparent), transparent 70%),
-    radial-gradient(50% 45% at 85% 25%, color-mix(in srgb, var(--accent) 18%, transparent), transparent 70%),
-    radial-gradient(70% 60% at 50% 100%, color-mix(in srgb, var(--secondary) 90%, transparent), transparent 70%);
+    radial-gradient(
+      60% 50% at 20% 10%,
+      color-mix(in srgb, var(--primary) 30%, transparent),
+      transparent 70%
+    ),
+    radial-gradient(
+      50% 45% at 85% 25%,
+      color-mix(in srgb, var(--accent) 18%, transparent),
+      transparent 70%
+    ),
+    radial-gradient(
+      70% 60% at 50% 100%,
+      color-mix(in srgb, var(--secondary) 90%, transparent),
+      transparent 70%
+    );
 }
 
 .blob-primary {
-  background: radial-gradient(circle at 30% 30%, var(--primary), transparent 70%);
+  background: radial-gradient(
+    circle at 30% 30%,
+    var(--primary),
+    transparent 70%
+  );
   filter: blur(60px);
 }
 
 .blob-accent {
-  background: radial-gradient(circle at 60% 40%, var(--accent), transparent 70%);
+  background: radial-gradient(
+    circle at 60% 40%,
+    var(--accent),
+    transparent 70%
+  );
   filter: blur(70px);
 }
 
 .blob-deep {
-  background: radial-gradient(circle at 50% 50%, var(--secondary), transparent 70%);
+  background: radial-gradient(
+    circle at 50% 50%,
+    var(--secondary),
+    transparent 70%
+  );
   filter: blur(50px);
 }
 
@@ -147,7 +177,12 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .scrim-bottom {
-  background: linear-gradient(to top, color-mix(in srgb, var(--background) 92%, transparent), color-mix(in srgb, var(--background) 45%, transparent) 55%, transparent);
+  background: linear-gradient(
+    to top,
+    color-mix(in srgb, var(--background) 92%, transparent),
+    color-mix(in srgb, var(--background) 45%, transparent) 55%,
+    transparent
+  );
 }
 
 .animate-morph-a {
@@ -184,37 +219,92 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 @keyframes morphA {
-  0%, 100% { transform: translate3d(0, 0, 0) scale(1); border-radius: 42% 58% 63% 37% / 45% 40% 60% 55%; }
-  50% { transform: translate3d(40px, 30px, 0) scale(1.15); border-radius: 60% 40% 35% 65% / 55% 60% 40% 45%; }
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    border-radius: 42% 58% 63% 37% / 45% 40% 60% 55%;
+  }
+
+  50% {
+    transform: translate3d(40px, 30px, 0) scale(1.15);
+    border-radius: 60% 40% 35% 65% / 55% 60% 40% 45%;
+  }
 }
 
 @keyframes morphB {
-  0%, 100% { transform: translate3d(0, 0, 0) scale(1.1); border-radius: 55% 45% 40% 60% / 60% 35% 65% 40%; }
-  50% { transform: translate3d(-50px, 40px, 0) scale(0.9); border-radius: 38% 62% 58% 42% / 40% 58% 42% 60%; }
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1.1);
+    border-radius: 55% 45% 40% 60% / 60% 35% 65% 40%;
+  }
+
+  50% {
+    transform: translate3d(-50px, 40px, 0) scale(0.9);
+    border-radius: 38% 62% 58% 42% / 40% 58% 42% 60%;
+  }
 }
 
 @keyframes morphC {
-  0%, 100% { transform: translate3d(0, 0, 0) scale(1); border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%; }
-  50% { transform: translate3d(30px, -40px, 0) scale(1.2); border-radius: 62% 38% 46% 54% / 50% 62% 38% 50%; }
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
+  }
+
+  50% {
+    transform: translate3d(30px, -40px, 0) scale(1.2);
+    border-radius: 62% 38% 46% 54% / 50% 62% 38% 50%;
+  }
 }
 
 @keyframes spinSlow {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes revealUp {
-  from { opacity: 0; transform: translate3d(0, 32px, 0); }
-  to { opacity: 1; transform: translate3d(0, 0, 0); }
+  from {
+    opacity: 0;
+    transform: translate3d(0, 32px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
 }
 
 @keyframes modalIn {
-  from { opacity: 0; transform: translate3d(0, 24px, 0) scale(0.97); }
-  to { opacity: 1; transform: translate3d(0, 0, 0) scale(1); }
+  from {
+    opacity: 0;
+    transform: translate3d(0, 24px, 0) scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  .animate-morph-a, .animate-morph-b, .animate-morph-c, .animate-spin-slow { animation: none; }
-  .reveal-ready { animation: none; opacity: 1; }
+  html {
+    scroll-behavior: auto;
+  }
+
+  .animate-morph-a,
+  .animate-morph-b,
+  .animate-morph-c,
+  .animate-spin-slow {
+    animation: none;
+  }
+
+  .reveal-ready {
+    animation: none;
+    opacity: 1;
+  }
 }

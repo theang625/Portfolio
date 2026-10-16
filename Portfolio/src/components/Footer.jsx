@@ -1,8 +1,8 @@
-'use client';
 
 import React, { useState, useEffect } from 'react';
-import AppLogo from './ui/AppLogo';
+import { RiTelegramLine, RiGithubLine, RiTwitterLine } from "react-icons/ri";
 import AppIcon from './ui/AppIcon';
+import AppLogo from './ui/AppLogo';
 
 const navigationLinks = [
   { label: 'Work', href: '#work' },
@@ -16,38 +16,17 @@ const socialLinks = [
   {
     name: 'GitHub',
     href: 'https://github.com',
-    icon: (
-      <svg className="h-5 w-5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
-        <path fillRule="evenodd" clipRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
-      </svg>
-    ),
+    icon: <RiGithubLine className="h-5 w-5" />,
   },
   {
-    name: 'LinkedIn',
-    href: 'https://linkedin.com',
-    icon: (
-      <svg className="h-5 w-5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.64 1.64 0 1 0 0-3.28 1.64 1.64 0 0 0 0 3.28m1.4 9.74v-8.37H5.06v8.37z" />
-      </svg>
-    ),
+    name: 'Telegram',
+    href: 'https://t.me/chhuntheangthorn',
+    icon: <RiTelegramLine className="h-5 w-5" />,
   },
   {
     name: 'X (Twitter)',
     href: 'https://twitter.com',
-    icon: (
-      <svg className="h-5 w-5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-      </svg>
-    ),
-  },
-  {
-    name: 'Dribbble',
-    href: 'https://dribbble.com',
-    icon: (
-      <svg className="h-5 w-5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
-        <path fillRule="evenodd" clipRule="evenodd" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c5.51 0 10-4.48 10-10S17.51 2 12 2zm6.605 4.61a8.502 8.502 0 011.93 5.312c-.282-.058-2.617-.52-5.006-.217-.152-.35-.31-.7-.474-1.047 3.013-1.583 3.55-4.048 3.55-4.048zm-5.032-2.176a8.528 8.528 0 014.28 1.706s-.49 2.24-3.328 3.738c-1.353-2.484-2.83-4.63-2.83-4.63.618-.52 1.257-.814 1.878-.814zm-3.69 1.157s1.493 2.15 2.85 4.643c-3.794 1.03-7.26.172-7.26.172a8.508 8.508 0 014.41-4.815zM3.5 12c0-.236.012-.469.034-.7 0 0 3.74.887 7.766-.263.167.354.329.712.484 1.07-2.316.715-4.595 2.802-5.748 5.485A8.47 8.47 0 013.5 12zm8.5 8.5a8.47 8.47 0 01-5.076-1.704c.995-2.378 3.016-4.225 5.215-4.908.97 2.535 1.365 5.034 1.402 5.297A8.473 8.473 0 0112 20.5zm2.946-.667c-.04-.326-.43-2.73-1.367-5.186 2.348-.363 4.417.24 4.545.28a8.508 8.508 0 01-3.178 4.906z" />
-      </svg>
-    ),
+    icon: <RiTwitterLine className="h-5 w-5" />,
   },
 ];
 
@@ -146,6 +125,7 @@ export default function Footer() {
               >
                 <AppIcon name={copied ? 'CheckIcon' : 'DocumentDuplicateIcon'} size={18} className={copied ? 'text-success' : 'text-muted-foreground'} />
                 <span>{copied ? 'Copied to clipboard!' : email}</span>
+
               </button>
 
               <a
@@ -208,7 +188,7 @@ export default function Footer() {
             <h3 className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
               Connect & Follow
             </h3>
-            <div className="flex flex-wrap gap-2.5">
+            <div className="flex flex-wrap gap-2.5 py-5">
               {socialLinks.map((s) => (
                 <a
                   key={s.name}
