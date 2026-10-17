@@ -9,6 +9,7 @@ import {
 } from 'react-device-detect';
 
 const links = [
+  {label: 'Home', href: '#home'},
   { label: 'About', href: '#about' },
   { label: 'Skill', href: '#skill' },
   { label: 'Projects', href: '#projects' },
@@ -81,14 +82,14 @@ export default function Header() {
           ))}
         </ul>
 
-        <div>
+        {/* <div>
           <button className="md: hidden lg:flex">
             <AppIcon
               name={open ? 'CommandLineIcon' : 'CommandLineIcon'}
               size={30}
             />
           </button>
-        </div>
+        </div> */}
 
         <div className="flex items-center gap-2">
           <a
