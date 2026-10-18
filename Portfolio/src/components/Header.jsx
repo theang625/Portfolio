@@ -9,7 +9,7 @@ import {
 } from 'react-device-detect';
 
 const links = [
-  {label: 'Home', href: '#home'},
+  { label: 'Home', href: '#home' },
   { label: 'About', href: '#about' },
   { label: 'Skill', href: '#skill' },
   { label: 'Projects', href: '#projects' },

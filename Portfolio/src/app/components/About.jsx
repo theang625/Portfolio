@@ -1,4 +1,3 @@
-import React from 'react';
 import AppImage from '../../components/ui/AppImage';
 import SectionHeader from './SectionHeader';
 import { useReveal } from './useReveal';
@@ -45,10 +44,10 @@ export default function AboutSection() {
                 aria-hidden="true"
               />
 
-              <div className="glass-strong relative aspect-[3/4] overflow-hidden rounded-full p-2">
+              <div className="glass-strong relative overflow-hidden rounded-full p-2">
                 <div className="relative h-full w-full overflow-hidden rounded-full bg-foreground">
                   <AppImage
-                    src="https://img.rocket.new/generatedImages/rocket_gen_img_1e95358c6-1772081363912.png"
+                    src="https://cdn-icons-png.flaticon.com/512/9815/9815472.png"
                     alt="Confident man in a blazer smiling in a bright, airy office with white walls and soft daylight"
                     fill
                     sizes="(max-width: 1024px) 70vw, 30vw"
@@ -59,10 +58,10 @@ export default function AboutSection() {
 
               <div className="glass absolute -bottom-4 -right-2 rounded-2xl px-4 py-3 sm:-right-6">
                 <p className="font-display text-3xl font-semibold text-accent">
-                  140+
+                  Third year
                 </p>
                 <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                  projects shipped
+                  Student
                 </p>
               </div>
             </div>
