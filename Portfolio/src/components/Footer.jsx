@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { RiTelegramLine, RiGithubLine, RiTwitterLine } from 'react-icons/ri';
+import { RiTelegramLine, RiGithubLine, RiSmartphoneLine } from 'react-icons/ri';
 import AppIcon from './ui/AppIcon';
 import AppLogo from './ui/AppLogo';
 
@@ -23,9 +23,9 @@ const socialLinks = [
     icon: <RiTelegramLine className="h-5 w-5" />,
   },
   {
-    name: 'X (Twitter)',
-    href: 'https://twitter.com',
-    icon: <RiTwitterLine className="h-5 w-5" />,
+    name: 'Contact',
+    href: 'tel:+85581553323',
+    icon: <RiSmartphoneLine className="h-5 w-5" />,
   },
 ];
 
@@ -146,7 +146,7 @@ export default function Footer() {
         </div>
 
         {/* Multi-column Information Grid */}
-        <div className="grid grid-cols-1 gap-12 border-t border-foreground/10 pt-16 pb-12 sm:grid-cols-2 lg:grid-cols-12">
+        <div className="grid grid-cols-1 gap-12 lg:justify-between lg:flex lg:items-start border-t border-foreground/10 pt-16 pb-12 sm:grid-cols-2 lg:grid-cols-12">
           {/* Brand & Local Time Column */}
           <div className="space-y-5 lg:col-span-5">
             <a
@@ -154,9 +154,8 @@ export default function Footer() {
               className="flex items-center gap-2.5 group w-fit"
               aria-label="GlassFolio home"
             >
-              <AppLogo size={32} />
               <span className="font-display text-xl font-semibold tracking-tight text-foreground group-hover:text-primary transition-colors">
-                GlassFolio
+                MyPortfolio
               </span>
             </a>
             <p className="text-sm text-muted-foreground max-w-sm leading-relaxed">
@@ -174,26 +173,6 @@ export default function Footer() {
                 {time || '00:00:00 UTC'}
               </span>
             </div>
-          </div>
-
-          {/* Navigation Links Column */}
-          <div className="space-y-4 lg:col-span-3">
-            <h3 className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
-              Navigation
-            </h3>
-            <ul className="space-y-2.5 text-sm">
-              {navigationLinks.map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="group inline-flex items-center gap-2 text-muted-foreground transition-colors hover:text-foreground"
-                  >
-                    <span className="h-1.5 w-1.5 rounded-full bg-primary/40 opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:scale-125" />
-                    <span>{link.label}</span>
-                  </a>
-                </li>
-              ))}
-            </ul>
           </div>
 
           {/* Social Presence Column */}
@@ -227,10 +206,7 @@ export default function Footer() {
 
         {/* Bottom Bar: Copyright & Back To Top */}
         <div className="flex flex-col items-center justify-between gap-4 border-t border-foreground/10 pt-8 sm:flex-row text-xs text-muted-foreground">
-          <p>
-            © {currentYear} GlassFolio. Handcrafted with React, Vite & Tailwind
-            CSS.
-          </p>
+          <p>© {currentYear}. Handcrafted with React, Vite & Tailwind CSS.</p>
 
           <button
             type="button"
