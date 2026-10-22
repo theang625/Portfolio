@@ -1,26 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import AppLogo from './ui/AppLogo';
-import AppIcon from './ui/AppIcon';
-import {
-  BrowserView,
-  MobileView,
-  isBrowser,
-  isMobile,
-} from 'react-device-detect';
+import Icon from './ui/AppIcon';
 
 const links = [
-  { label: 'Home', href: '#home' },
+  { label: 'Work', href: '#work' },
   { label: 'About', href: '#about' },
-  { label: 'Skill', href: '#skill' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Contact', href: '#contact' },
-];
-
-const name = [
-  {
-    firstName: 'Chhun',
-    lastName: 'Theang',
-  },
+  { label: 'Recognition', href: '#recognition' },
+  { label: 'Words', href: '#words' },
 ];
 
 export default function Header() {
@@ -45,30 +31,15 @@ export default function Header() {
         aria-label="Primary"
       >
         <a
-          href="#Home"
+          href="#top"
           className="flex items-center gap-2"
           aria-label="GlassFolio home"
         >
-          <span className="flex font-display text-3xl tracking-tight gap-2">
-            {name?.map((n, index) => (
-              <span key={index} className="flex gap-2">
-                {/* Desktop View: Shows full first and last name */}
-                <span className="hidden md:flex gap-2">
-                  <span className="font-bold text-primary">{n?.firstName}</span>
-                  <span>{n?.lastName}</span>
-                </span>
-
-                {/* Mobile View: Shows initials or shortened version */}
-                <span className="flex md:hidden gap-1">
-                  <span className="font-bold text-primary">
-                    {n?.firstName?.[0]}
-                  </span>
-                  <span>{n?.lastName?.[0]}</span>
-                </span>
-              </span>
-            ))}
+          <span className="font-display text-lg tracking-tight">
+            MyPortfolio
           </span>
         </a>
+
         <ul className="hidden items-center gap-1 md:flex">
           {links?.map((l) => (
             <li key={l?.href}>
@@ -82,22 +53,12 @@ export default function Header() {
           ))}
         </ul>
 
-        {/* <div>
-          <button className="md: hidden lg:flex">
-            <AppIcon
-              name={open ? 'CommandLineIcon' : 'CommandLineIcon'}
-              size={30}
-            />
-          </button>
-        </div> */}
-
         <div className="flex items-center gap-2">
           <a
             href="#contact"
             className="inline-flex min-h-[44px] items-center rounded-full bg-primary px-5 text-sm font-semibold text-primary-foreground transition-transform duration-300 spring-ease hover:scale-105"
           >
-            <AppIcon name={'NewspaperIcon'} className="mr-1" size={28} />
-            Resume.pdf
+            Hire me
           </a>
           <button
             type="button"
@@ -106,7 +67,7 @@ export default function Header() {
             aria-label={open ? 'Close menu' : 'Open menu'}
             aria-expanded={open}
           >
-            <AppIcon name={open ? 'XMarkIcon' : 'Bars3Icon'} size={22} />
+            <Icon name={open ? 'XMarkIcon' : 'Bars3Icon'} size={22} />
           </button>
         </div>
       </nav>

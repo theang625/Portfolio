@@ -1,6 +1,5 @@
-
 import React, { useState, useEffect } from 'react';
-import { RiTelegramLine, RiGithubLine, RiTwitterLine } from "react-icons/ri";
+import { RiTelegramLine, RiGithubLine, RiTwitterLine } from 'react-icons/ri';
 import AppIcon from './ui/AppIcon';
 import AppLogo from './ui/AppLogo';
 
@@ -15,7 +14,7 @@ const navigationLinks = [
 const socialLinks = [
   {
     name: 'GitHub',
-    href: 'https://github.com',
+    href: 'https://github.com/theang625',
     icon: <RiGithubLine className="h-5 w-5" />,
   },
   {
@@ -46,7 +45,7 @@ export default function Footer() {
           minute: '2-digit',
           second: '2-digit',
           timeZoneName: 'short',
-        })
+        }),
       );
     };
     updateTime();
@@ -73,7 +72,10 @@ export default function Footer() {
   };
 
   return (
-    <footer id="contact" className="relative overflow-hidden pt-24 pb-12 sm:pt-32">
+    <footer
+      id="contact"
+      className="relative overflow-hidden pt-24 pb-12 sm:pt-32"
+    >
       {/* Ambient background glows */}
       <div
         className="pointer-events-none absolute -bottom-24 left-1/2 -z-10 h-[500px] w-[900px] -translate-x-1/2 rounded-full opacity-35 blur-[120px]"
@@ -111,7 +113,8 @@ export default function Footer() {
                 together.
               </h2>
               <p className="text-base text-muted-foreground sm:text-lg max-w-xl">
-                Have an ambitious idea, need high-craft product design, or full-stack engineering? My inbox is always open.
+                Have an ambitious idea, need high-craft product design, or
+                full-stack engineering? My inbox is always open.
               </p>
             </div>
 
@@ -123,9 +126,12 @@ export default function Footer() {
                 className="inline-flex min-h-[48px] items-center justify-center gap-2 rounded-full border border-foreground/20 bg-foreground/5 px-6 text-sm font-semibold text-foreground transition-all duration-300 hover:bg-foreground/15 hover:border-foreground/30 active:scale-95"
                 aria-label="Copy email address to clipboard"
               >
-                <AppIcon name={copied ? 'CheckIcon' : 'DocumentDuplicateIcon'} size={18} className={copied ? 'text-success' : 'text-muted-foreground'} />
+                <AppIcon
+                  name={copied ? 'CheckIcon' : 'DocumentDuplicateIcon'}
+                  size={18}
+                  className={copied ? 'text-success' : 'text-muted-foreground'}
+                />
                 <span>{copied ? 'Copied to clipboard!' : email}</span>
-
               </button>
 
               <a
@@ -143,14 +149,19 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-12 border-t border-foreground/10 pt-16 pb-12 sm:grid-cols-2 lg:grid-cols-12">
           {/* Brand & Local Time Column */}
           <div className="space-y-5 lg:col-span-5">
-            <a href="#top" className="flex items-center gap-2.5 group w-fit" aria-label="GlassFolio home">
+            <a
+              href="#top"
+              className="flex items-center gap-2.5 group w-fit"
+              aria-label="GlassFolio home"
+            >
               <AppLogo size={32} />
               <span className="font-display text-xl font-semibold tracking-tight text-foreground group-hover:text-primary transition-colors">
                 GlassFolio
               </span>
             </a>
             <p className="text-sm text-muted-foreground max-w-sm leading-relaxed">
-              Crafting tactile digital products, high-fidelity interfaces, and fluid interactions at the intersection of design and code.
+              Crafting tactile digital products, high-fidelity interfaces, and
+              fluid interactions at the intersection of design and code.
             </p>
 
             {/* Live Clock / Location Card */}
@@ -159,7 +170,9 @@ export default function Footer() {
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
               </span>
               <span>Local time:</span>
-              <span className="font-mono font-medium text-foreground">{time || '00:00:00 UTC'}</span>
+              <span className="font-mono font-medium text-foreground">
+                {time || '00:00:00 UTC'}
+              </span>
             </div>
           </div>
 
@@ -205,7 +218,8 @@ export default function Footer() {
             </div>
             <div className="pt-2">
               <p className="text-xs text-muted-foreground/80 leading-relaxed">
-                Open for design critiques, code reviews, advisory, or occasional coffee chats.
+                Open for design critiques, code reviews, advisory, or occasional
+                coffee chats.
               </p>
             </div>
           </div>
@@ -213,7 +227,10 @@ export default function Footer() {
 
         {/* Bottom Bar: Copyright & Back To Top */}
         <div className="flex flex-col items-center justify-between gap-4 border-t border-foreground/10 pt-8 sm:flex-row text-xs text-muted-foreground">
-          <p>© {currentYear} GlassFolio. Handcrafted with React, Vite & Tailwind CSS.</p>
+          <p>
+            © {currentYear} GlassFolio. Handcrafted with React, Vite & Tailwind
+            CSS.
+          </p>
 
           <button
             type="button"
