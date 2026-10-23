@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { RiTelegramLine, RiGithubLine, RiSmartphoneLine } from 'react-icons/ri';
 import AppIcon from './ui/AppIcon';
-import AppLogo from './ui/AppLogo';
 
 const navigationLinks = [
   { label: 'Work', href: '#work' },
@@ -34,7 +33,7 @@ const currentYear = new Date().getFullYear();
 export default function Footer() {
   const [copied, setCopied] = useState(false);
   const [time, setTime] = useState('');
-  const email = 'hello@glassfolio.dev';
+  const email = 'hello@gmail.com';
 
   useEffect(() => {
     const updateTime = () => {

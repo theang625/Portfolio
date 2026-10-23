@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import AppLogo from './ui/AppLogo';
 import Icon from './ui/AppIcon';
+import resumePdf from '../assets/Thorn_Chhuntheang_CV.pdf';
 
 const links = [
   { label: 'Work', href: '#work' },
@@ -55,10 +55,11 @@ export default function Header() {
 
         <div className="flex items-center gap-2">
           <a
-            href="#contact"
+            href={resumePdf}
+            download="Thorn_Chhuntheang_CV.pdf"
             className="inline-flex min-h-[44px] items-center rounded-full bg-primary px-5 text-sm font-semibold text-primary-foreground transition-transform duration-300 spring-ease hover:scale-105"
           >
-            Hire me
+            Resume
           </a>
           <button
             type="button"
@@ -89,11 +90,12 @@ export default function Header() {
               </a>
             ))}
             <a
-              href="#contact"
+              href={resumePdf}
+              download="Thorn_Chhuntheang_CV.pdf"
               onClick={() => setOpen(false)}
               className="mt-4 inline-flex min-h-[44px] items-center rounded-full bg-primary px-8 text-base font-semibold text-primary-foreground"
             >
-              Hire me
+              Resume
             </a>
           </div>
         </div>

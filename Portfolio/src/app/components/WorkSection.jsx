@@ -48,7 +48,7 @@ export default function WorkSection() {
           <div
             role="tablist"
             aria-label="Filter projects"
-            className="glass flex w-fit flex-wrap gap-1 rounded-full p-1"
+            className="glass flex w-fit flex-wrap gap-1 rounded-3xl p-1 sm:gap-2 sm:p-2"
           >
             {filters.map((f) => (
               <button
